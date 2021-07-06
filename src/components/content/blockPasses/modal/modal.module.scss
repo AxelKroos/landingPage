@@ -41,7 +41,6 @@ $easing: cubic-bezier(.55, 0, .1, 1);
   }
 }
 
-
 /**
  * Overlay
  * -- only show for tablet and up
@@ -75,6 +74,16 @@ $easing: cubic-bezier(.55, 0, .1, 1);
   margin: 0 20px;
 }
 
+.close {
+  padding: 3px;
+  background: #9a2626;
+  border-radius: 5px;
+  color: white;
+  position: absolute;
+  top: 78.5%;
+  margin: 0 auto;
+}
+
 /**
  * Mobile styling
  */
@@ -100,14 +109,5 @@ $easing: cubic-bezier(.55, 0, .1, 1);
       opacity: 1;
       visibility: visible;
     }
-  }
-}
-
-@media only screen and (max-width: 680px) {
-  .close {
-    display: none;
-  }
-  .closeMobile {
-    display: block;
   }
 }

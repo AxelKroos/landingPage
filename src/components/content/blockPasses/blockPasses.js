@@ -39,7 +39,7 @@ function BlockPasses(props) {
                     <p>На 6 месяцев <span>10500₽</span></p>
                     <p>На 12 месяцев <span>15000₽</span></p>
                 </div>
-                <div onClick={props.openModal}><ButtonForOrderingInCardPass/></div>
+                <a href="#Контакты"><ButtonForOrderingInCardPass/></a>
             </div>
         </article>
     })

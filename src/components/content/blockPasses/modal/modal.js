@@ -6,6 +6,7 @@ function Modal(props) {
         <div className={props.modal ? classes.modalOverlay + ' ' + classes.active : classes.modalOverlay}
              onClick={props.closeModal}>
             <CheckThePass/>
+            <div className={classes.close} onClick={props.closeModal}>Закрыть</div>
         </div> : null
 }
 

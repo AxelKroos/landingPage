@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400|Raleway:300);
+
+$btn-width: 250px !default;
+$btn-height: 50px !default;
+$color1: #fff;
+$color2: #608edc;
+$margin: 5px auto;
+$trans_delay: .1s;
+
+@keyframes slideme {
+  0% {
+    left: -30px;
+    margin-left: 0px;
+  }
+  30% {
+    left: 110%;
+    margin-left: 80px;
+  }
+  100% {
+    left: 110%;
+    margin-left: 80px;
+  }
+}
+
+
+.btn:before,
+.btn:after {
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
+}
+
+.btn {
+  display: block;
+  position: relative;
+  max-width: $btn-width;
+  height: $btn-height;
+  border: 1px solid $color1;
+  overflow: hidden;
+  color: $color1;
+  text-transform: capitalize;
+  line-height: $btn-height;
+  z-index: 1;
+  margin: $margin;
+  border-radius: 5px;
+  transition: 1s ease-out;
+  font-family: 'Open Sans', Helvetica, arial, sans-serif;
+  text-align: center;
+  background: $color2;
+}
+
+.btn:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 300px;
+  margin-left: 60px;
+  background: rgba(255, 255, 255, 0.53);
+  position: absolute;
+  left: -40px;
+  top: -150px;
+  z-index: 1;
+  transform: rotate(45deg);
+  transition: all 0.2s;
+  animation-name: slideme;
+  animation-duration: 3s;
+  animation-delay: 0.05s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/*-------------- hover types --------------*/
+[data-type] {
+  &:before {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    z-index: -1;
+  }
+
+  &:hover {
+    -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, .5);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    -webkit-transition-delay: $trans_delay;
+    transition-delay: $trans_delay;
+    color: $color2;
+    z-index: 8;
+  }
+}
+
+/*--------position aware -----------*/
+
+[data-type="diagonal_swipe_left"] {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    border-right: 50px solid transparent;
+    border-bottom: $btn-height solid $color1;
+  }
+
+  &:hover {
+    &:before {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  .btn {
+    width: $btn-width;
+  }
+}

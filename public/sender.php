@@ -1,0 +1,38 @@
+<?php
+header('Access-Control-Allow-Origin: *');
+
+$param = json_decode($_REQUEST["param"]);
+
+$admin_email = 'info@help-cargo.ru';
+$theme = 'Заявка с сайта';
+
+$c = true;
+
+foreach ( $param->dataForm as $key => $value ) {
+    if ( $value != "") {
+        $message .= "
+        " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+            <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
+            <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+        </tr>
+        ";
+    }
+}
+
+// Собираем тело письма
+$message = "<table style='width: auto;'>$message</table>";
+
+function adopt($text) {
+    return '=?UTF-8?B?'.Base64_encode($text).'?=';
+}
+
+$headers = "MIME-Version: 1.0" . PHP_EOL .
+    "Content-Type: text/html; charset=utf-8" . PHP_EOL .
+    'From: '.adopt($theme).' <'.$admin_email.'>' . PHP_EOL .
+    'Reply-To: '.$admin_email.'' . PHP_EOL;
+
+
+if ($param->dataForm) {
+    mail($admin_email, adopt($theme), $message, $headers );
+    echo "Отправлено";
+}
