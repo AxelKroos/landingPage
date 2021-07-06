@@ -1,3 +1,25 @@
+#Лендинг компании
+
+### Стек: React + Redux, SCSS
+
+## Особенности:
+- :white_check_mark: Лендинг выложен на сервер, доменный адрес: https://www.axelkroos.ru/
+- :white_check_mark: Адаптивная вёрстка
+- :white_check_mark: Оптимизированы картинки для быстроты загрузки
+- :white_check_mark: Липнущее меню
+- :white_check_mark: Множество визуальных эффектов сильно не влияющих на производительность
+- :white_check_mark: Настроенная форма обратной связи
+- :white_check_mark: Модальное окно с встроенной страницей другого сайта
+
+### ПК
+![H4UnBBxo](https://user-images.githubusercontent.com/79835478/124559972-f5eca080-de44-11eb-95a5-2afb18cea00c.jpg)
+### ipad Pro
+![m8Ecp9fr](https://user-images.githubusercontent.com/79835478/124559978-f7b66400-de44-11eb-8911-10371082d46a.jpg)
+### iphone X
+![4THXn5SA](https://user-images.githubusercontent.com/79835478/124559983-f9802780-de44-11eb-895a-f46196f41c0d.jpg)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
